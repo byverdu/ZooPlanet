@@ -1,0 +1,312 @@
+extends layout
+
+block content
+    noscript
+        p Your javascript is disabled!
+        a(href='http://enable-javascript.com/') Take a look on how to enable it
+    .loader
+    .reveal
+        .slides
+            section.animal
+                h1.letters=title
+                p Welcome to #{title}, a place where children can learn about animals.
+                p Take a look on pictures, get some basic information and the sound that they make.
+                p Navigate using the key arrows
+
+
+            section
+                section
+                    h2. Farm animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in farm
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/1')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+            
+
+            // Forest
+
+            section
+                section
+                    h2 Forest animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in forest
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/2')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+            // Countryside
+
+            section
+                section
+                    h2 Countryside animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in countryside
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/3')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+
+            // Country
+
+            section
+                section
+                    h2 Country animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in country
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/4')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+
+            // Jungle
+
+            section
+                section
+                    h2 Jungle animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in jungle
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/5')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+            // Savannah
+
+            section
+                section
+                    h2 Savannah animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in savannah
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/6')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+            // Lagoon
+
+            section
+                section
+                    h2 Lagoon animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in lagoon
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/7')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+            // Ocean
+
+            section
+                section
+                    h2 Ocean animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in ocean
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/8')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+
+            // Mountain
+
+            section
+                section
+                    h2 Mountain animals
+                    img(class='image navigate-down enabled',src='/images/arrow.png',alt='arrow down')
+
+                each val in mountain
+
+                    section.animal(class= val.name)
+                        h2.letters_2= val.name
+                        img(class='image',src='/images/'+val.name+'.jpg',alt=val.name)
+                        ul
+                          li
+                            b='Type : ' +  val.type
+                          li
+                            b='Legs : ' +  val.leg
+                          li
+                            b='Food : ' +  val.food
+                          li
+                            b='Sound : ' +  val.sound
+                        if val.sound != 'none'
+                            audio(controls=true)
+                                source(src='/sounds/'+val.name+'.m4a')
+                                source(src='/sounds/'+val.name+'.ogg')
+                section
+                    a(href='#/9')
+                        img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(180deg)')
+
+
+
+            section.animal
+                p Bring it to you by:
+                    a(href=link_site)  Byverdu
+
+                p Sounds by:
+                    a(href=soundboard) SoundBoard
+
+                p Follow me on:
+                    a(href=twitter) @arve80
+
+                a(href='#')
+                    img(class='image',src='/images/arrow.png',alt='arrow down',style='transform: rotate(90deg);width:auto;height:auto')
+
+
+
+
+
