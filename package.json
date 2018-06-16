@@ -1,14 +1,18 @@
 {
-  "name": "ZooPlanet",
+  "name": "zoo-planet",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "express": "3.4.4",
     "jade": "*",
-    "nib":"*",
-    "stylus":"*"
+    "nib": "*",
+    "stylus": "*"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }

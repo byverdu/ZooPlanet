@@ -20,7 +20,9 @@ $(window).load(function() {
         progress: true,
         history: true,
         center: true,
-        transition: Reveal.getQueryHash().transition || 'default'});
+        transition: Reveal.getQueryHash().transition || 'default',
+        autoSlide: 12000
+      });
 
 
     // Initialized lettering.js
@@ -29,5 +31,16 @@ $(window).load(function() {
 
     $('.letters_2').lettering();
 
-
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      const audioElem = $('.animal.present > audio');
+      const prevAudio = event.previousSlide.querySelector('audio');
+      
+      if (prevAudio) {
+        prevAudio.pause();
+        prevAudio.currentTime = 0;
+      }
+      if (audioElem[0]) {
+        audioElem[0].play();
+      }
+    });
 });
