@@ -27,12 +27,14 @@ $(document).ready(function () {
   // Reveal.js settings
 
   Reveal.initialize({
+    width: 1200,
+	  height: 700,
     controls: true,
     progress: true,
     history: true,
     center: true,
     transition: Reveal.getQueryHash().transition || 'default',
-    autoSlide: 12000
+    // autoSlide: 12000
   });
 
 

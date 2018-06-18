@@ -12,7 +12,7 @@ $font_hs = 'existence', sans-serif
 
 $font_all = 'lane', serif
 
-$width = 300px
+$width = 500px
 
 @font-face
   font-family 'existence'
@@ -58,9 +58,17 @@ noscript
 
 
 
-body
+body:after
+  content ""
   background url("../images/back_zoo.jpg") no-repeat center//linear-gradient(to bottom,#EBFCFF,#CDF0F0)
   background-size cover
+  opacity .5
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
 
 .reveal
   font-family $font_all
