@@ -34,7 +34,8 @@ $(document).ready(function () {
     history: true,
     center: true,
     transition: Reveal.getQueryHash().transition || 'default',
-    // autoSlide: 12000
+    autoSlide: 12000,
+    loop: true
   });
 
 
