@@ -1,46 +1,54 @@
+function playAudio(audioSelector, prevAudioElem = undefined) {
+  const audioElem = document.querySelector(audioSelector);    
+  
+  if (prevAudioElem) {
+    prevAudioElem.pause();
+    prevAudioElem.currentTime = 0;
+  }
+  if (audioElem) {
+    audioElem.play();
+  }
+}
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-// Loading page
+  // Loading page
 
-$(window).load(function() {
-    
+  $(window).load(function () {
+
     $(".loader").fadeOut("slow");
 
-});
+  });
 
 
 
-    console.log('Document Loaded');
+  console.log('Document Loaded');
 
-    // Reveal.js settings
+  // Reveal.js settings
 
-    Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: Reveal.getQueryHash().transition || 'default',
-        autoSlide: 12000
-      });
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: Reveal.getQueryHash().transition || 'default',
+    autoSlide: 12000
+  });
 
 
-    // Initialized lettering.js
+  // Initialized lettering.js
 
-    $('.letters').lettering();
+  $('.letters').lettering();
 
-    $('.letters_2').lettering();
+  $('.letters_2').lettering();
 
-    Reveal.addEventListener( 'slidechanged', function( event ) {
-      const audioElem = $('.animal.present > audio');
-      const prevAudio = event.previousSlide.querySelector('audio');
-      
-      if (prevAudio) {
-        prevAudio.pause();
-        prevAudio.currentTime = 0;
-      }
-      if (audioElem[0]) {
-        audioElem[0].play();
-      }
-    });
+  Reveal.addEventListener('ready', function (event) {
+    playAudio('.animal.present > audio');
+  });
+  
+  Reveal.addEventListener('slidechanged', function (event) {
+    const prevAudio = event.previousSlide.querySelector('audio');
+
+    playAudio('.animal.present > audio', prevAudio);
+  });
 });
