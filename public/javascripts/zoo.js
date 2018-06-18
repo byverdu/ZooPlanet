@@ -1,12 +1,10 @@
-function playAudio(audioSelector, prevAudioElem = undefined) {
-  const audioElem = document.querySelector(audioSelector);    
-  
+function playAudio(audioElem, prevAudioElem = undefined) {
   if (prevAudioElem) {
     prevAudioElem.pause();
     prevAudioElem.currentTime = 0;
   }
-  if (audioElem) {
-    audioElem.play();
+  if (audioElem[0]) {
+    audioElem[0].play();
   }
 }
 
@@ -46,12 +44,14 @@ $(document).ready(function () {
   $('.letters_2').lettering();
 
   Reveal.addEventListener('ready', function (event) {
-    playAudio('.animal.present > audio');
+    const audioElem = $('.animal.present > audio');
+    playAudio(audioElem);
   });
   
   Reveal.addEventListener('slidechanged', function (event) {
-    const prevAudio = event.previousSlide.querySelector('audio');
+    const audioElem = $('.animal.present > audio');
+    const prevAudio = $(event.previousSlide).find('audio');
 
-    playAudio('.animal.present > audio', prevAudio);
+    playAudio(audioElem, prevAudio[0]);
   });
 });
